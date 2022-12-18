@@ -11,9 +11,10 @@ function getDiff(firstValue, secondValue) {
         array: result
     };
     return obj;
-}
-;
+};
+
 console.log(getDiff('abc', 'abcd')); // { amount: 1, array: ['d'] }
 console.log(getDiff('abcd', 'cdfe')); // { amount: 4, array: ['a', 'b', 'f', 'e'] }
 console.log(getDiff('abc', 'wbbcc')); // { amount: 2, array: ['a', 'w'] }
 console.log(getDiff('abc', 'abc')); // { amount: 0, array: [] }
+
