@@ -1,5 +1,9 @@
+interface GetDiffResult {
+  amount: number, 
+  array: string[]
+};
 
-function getDiff(firstValue: string, secondValue: string): {amount:number, array:string[]} {
+function getDiff(firstValue: string, secondValue: string): GetDiffResult  {
 
     let firstArray = secondValue.split('');
     let secondArray = firstValue.split('');
@@ -9,14 +13,10 @@ function getDiff(firstValue: string, secondValue: string): {amount:number, array
 
     const result: string[] = filterArray1.concat(filterArray2);
 
-    let amountArray: number = result.length;
-
-    const obj: { amount: number, array: string[] } = {
-        amount: amountArray,
+    return {
+        amount: result.length,
         array: result
     };
-
-    return obj;
 };
 
 console.log(getDiff('abc', 'abcd')); // { amount: 1, array: ['d'] }
